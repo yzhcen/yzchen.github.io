@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, Yzz的博客">
+    <meta name="keywords" content="Mybatis, Yzz的博客">
     <meta name="description" content="YongZhen">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | Yzz的博客</title>
+    <title>Mybatis | Yzz的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">tags</h1>
+                    <h1 class="description center-align post-title">Mybatis</h1>
                 </div>
             </div>
         </div>
@@ -428,12 +428,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JAVA%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">JAVA框架</span>
+                            </a>
+                        
+                            <a href="/tags/Mybatisatis/">
+                                <span class="chip bg-color">Mybatisatis</span>
+                            </a>
+                        
+                            <a href="/tags/mybatis-%E6%B3%A8%E8%A7%A3/">
+                                <span class="chip bg-color">mybatis 注解</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JAVA/" class="post-category">
+                                JAVA
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -442,28 +463,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-21
+                    2020-06-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-21
+                    2020-06-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    634
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -478,7 +499,38 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="mybatis入门"><a href="#mybatis入门" class="headerlink" title="mybatis入门"></a>mybatis入门</h1><h3 id="JDBC回顾"><a href="#JDBC回顾" class="headerlink" title="JDBC回顾"></a>JDBC回顾</h3><p><code>Connection connection = null;</code><br>  <code>PreparedStatement PreparedStament = null;</code><br>  <code>ResultSet resultSet =null;</code><br>  <code>try{</code><br>          <code>//加载驱动</code><br>          <code>class.ForName(&quot;com.mysql.jdbc.Driver&quot;);</code><br>        <code>//通过驱动管理类获取数据库链接</code><br>       <code>connection = DriverManager.getConnection(&quot;jdcb:mysql://localhost/essy?characterEncoding=utf-8,&quot;root&quot;,&quot;root&quot;);</code><br>  <code>}</code><br>  <code>//使用？占位符</code><br>  <code>String Sql = &quot;select * from user where id = ?&quot;;</code></p>
+<h2 id="创建maven工程"><a href="#创建maven工程" class="headerlink" title="创建maven工程"></a>创建maven工程</h2><p><code>使用jar包导入</code><br><code>&lt;packaging&gt;jar&lt;/packaging&gt;</code><br> <code>&lt;dependencies&gt;</code><br>  <code>&lt;dependency&gt;</code><br>          <code>&lt;groupId&gt;log4j&lt;/groupId&gt;</code><br>            <code>&lt;artifactId&gt;log4j&lt;/artifactId&gt;</code><br>            <code>&lt;version&gt;1.2.12&lt;/version&gt;</code><br>      <code>&lt;/dependency&gt;</code><br>      <code>&lt;dependency&gt;</code><br>           <code>&lt;groupId&gt;junit&lt;/groupId&gt;</code><br>           <code>&lt;artifactId&gt;junit&lt;/artifactId&gt;</code><br>            <code>&lt;version&gt;3.8.1&lt;/version&gt;</code><br>     <code>&lt;/dependency&gt;</code><br>      <code>&lt;dependency&gt;</code><br>           <code>&lt;groupId&gt;org.mybatis&lt;/groupId&gt;</code><br>          <code>&lt;artifactId&gt;mybatis&lt;/artifactId&gt;</code><br>          <code>&lt;version&gt;3.4.5&lt;/version&gt;</code><br>  <code>&lt;/dependency&gt;</code><br>      <code>&lt;dependency&gt;</code><br>          <code>&lt;groupId&gt;log4j&lt;/groupId&gt;</code><br>           <code>&lt;artifactId&gt;log4j&lt;/artifactId&gt;</code><br>          <code>&lt;version&gt;1.2.12&lt;/version&gt;</code><br>         <code>&lt;/dependency&gt;</code><br>        <code>&lt;dependency&gt;</code><br>            <code>&lt;groupId&gt;mysql&lt;/groupId&gt;</code><br>           <code>&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</code><br>           <code>&lt;version&gt;5.1.49&lt;/version&gt;</code><br>         <code>&lt;/dependency&gt;</code></p>
+<p> <code>&lt;/dependencies&gt;</code> </p>
+<h2 id="创建一个实体类"><a href="#创建一个实体类" class="headerlink" title="创建一个实体类"></a>创建一个实体类</h2><p> <strong>_ 注意 属性要和数据库列名一致 _</strong></p>
+<h2 id="创建一个持久层接口"><a href="#创建一个持久层接口" class="headerlink" title="创建一个持久层接口"></a>创建一个持久层接口</h2><p> <strong>_ 持久层接口的包结构要 _</strong></p>
+<h2 id="创建持久层映射文件"><a href="#创建持久层映射文件" class="headerlink" title="创建持久层映射文件"></a>创建持久层映射文件</h2><p><strong>_ 持久层映射文件的包结构要和接口一致 _</strong><br><strong>_ 注意接收类型 resultType 和 resultMap _</strong></p>
+<h2 id="创建SqlMapperConfig-xml"><a href="#创建SqlMapperConfig-xml" class="headerlink" title="创建SqlMapperConfig.xml"></a>创建SqlMapperConfig.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;environments default&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">        &lt;!--   配置主mysql的环境--&gt;</span><br><span class="line">        &lt;environment id&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">            &lt;!--     配置事务类型       --&gt;</span><br><span class="line">            &lt;transactionManager type&#x3D;&quot;JDBC&quot;&gt;&lt;&#x2F;transactionManager&gt;</span><br><span class="line">            &lt;!--     配置数据源（连接池）       --&gt;</span><br><span class="line">            &lt;dataSource type&#x3D;&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;!--       4个基本信息         --&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;driver&quot; value&#x3D;&quot;com.mysql.jdbc.Driver&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;url&quot; value&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;eesy&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;root&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;root&quot;&#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;dataSource&gt;</span><br><span class="line">        &lt;&#x2F;environment&gt;</span><br><span class="line">    &lt;&#x2F;environments&gt;</span><br><span class="line">        &lt;!--  配置映射文件  --&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">&lt;!--     xml 配置   &lt;mapper resource&#x3D;&quot;com&#x2F;yzchen&#x2F;dao&#x2F;UserDao.xml&quot;&gt;&lt;&#x2F;mapper&gt;--&gt;</span><br><span class="line">        &lt;mapper class&#x3D;&quot;com.yzchen.dao.UserDao&quot;&gt;&lt;&#x2F;mapper&gt;</span><br><span class="line">    &lt;&#x2F;mappers&gt;</span><br><span class="line">&lt;&#x2F;configuration&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><ul>
+<li>0x01读取配置文件<ul>
+<li><code>InputStream inputStream = Resources.class.getResourceAsStream(&quot;/SqlMapperConfig.xml&quot;);</code> *</li>
+</ul>
+</li>
+<li>0x02 创建SqlSessionFactory 对象<ul>
+<li>*`SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();<pre><code>SqlSessionFactory factory = builder.build(inputStream);`*</code></pre></li>
+</ul>
+</li>
+<li>0x03 使用工厂使用Factory对象 <ul>
+<li><em><code>SqlSession session = factory.openSession();</code></em></li>
+<li>0x04 创建SqlSession创建Dao接口的代理对象<ul>
+<li><em><code>UserDao userDao = session.getMapper(UserDao.class);</code></em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>0x05 释放资源<ul>
+<li><em><code>session.close();</code></em> </li>
+<li><em><code>inputStream.close();</code></em> </li>
+</ul>
+</li>
+</ul>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p><code>在接口上配@key()置</code><br><code>修改SqlMapperConfig.xml为class=&quot;com.test.dao.UserDao&quot;</code></p>
+
             </div>
             <hr/>
 
@@ -503,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.cyz1920.xyz/tags/index.html">https://blog.cyz1920.xyz/tags/index.html</a>
+                    <a href="https://blog.cyz1920.xyz/2020/06/22/Mybatis/">https://blog.cyz1920.xyz/2020/06/22/Mybatis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,7 +592,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/JAVA%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">JAVA框架</span>
+                                </a>
+                            
+                                <a href="/tags/Mybatisatis/">
+                                    <span class="chip bg-color">Mybatisatis</span>
+                                </a>
+                            
+                                <a href="/tags/mybatis-%E6%B3%A8%E8%A7%A3/">
+                                    <span class="chip bg-color">mybatis 注解</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -706,18 +770,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/06/23/mybatis-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="mybatis_01">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">mybatis_01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -727,9 +790,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -738,7 +801,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -746,22 +808,23 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/06/21/Java%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="tags">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java基础">
                         
-                        <span class="card-title">tags</span>
+                        <span class="card-title">Java基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            0x01 String类0xbsss     s
+
                         
                     </div>
                     <div class="publish-info">
@@ -770,13 +833,28 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Yzz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JAVA/" class="post-category">
+                                    JAVA
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
