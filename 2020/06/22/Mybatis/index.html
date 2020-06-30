@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    634
+                    643
                 </div>
                 
 
@@ -507,29 +507,9 @@
 <h2 id="创建持久层映射文件"><a href="#创建持久层映射文件" class="headerlink" title="创建持久层映射文件"></a>创建持久层映射文件</h2><p><strong>_ 持久层映射文件的包结构要和接口一致 _</strong><br><strong>_ 注意接收类型 resultType 和 resultMap _</strong></p>
 <h2 id="创建SqlMapperConfig-xml"><a href="#创建SqlMapperConfig-xml" class="headerlink" title="创建SqlMapperConfig.xml"></a>创建SqlMapperConfig.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;environments default&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">        &lt;!--   配置主mysql的环境--&gt;</span><br><span class="line">        &lt;environment id&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">            &lt;!--     配置事务类型       --&gt;</span><br><span class="line">            &lt;transactionManager type&#x3D;&quot;JDBC&quot;&gt;&lt;&#x2F;transactionManager&gt;</span><br><span class="line">            &lt;!--     配置数据源（连接池）       --&gt;</span><br><span class="line">            &lt;dataSource type&#x3D;&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;!--       4个基本信息         --&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;driver&quot; value&#x3D;&quot;com.mysql.jdbc.Driver&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;url&quot; value&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;eesy&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;root&quot;&#x2F;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;root&quot;&#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;dataSource&gt;</span><br><span class="line">        &lt;&#x2F;environment&gt;</span><br><span class="line">    &lt;&#x2F;environments&gt;</span><br><span class="line">        &lt;!--  配置映射文件  --&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">&lt;!--     xml 配置   &lt;mapper resource&#x3D;&quot;com&#x2F;yzchen&#x2F;dao&#x2F;UserDao.xml&quot;&gt;&lt;&#x2F;mapper&gt;--&gt;</span><br><span class="line">        &lt;mapper class&#x3D;&quot;com.yzchen.dao.UserDao&quot;&gt;&lt;&#x2F;mapper&gt;</span><br><span class="line">    &lt;&#x2F;mappers&gt;</span><br><span class="line">&lt;&#x2F;configuration&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><ul>
-<li>0x01读取配置文件<ul>
-<li><code>InputStream inputStream = Resources.class.getResourceAsStream(&quot;/SqlMapperConfig.xml&quot;);</code> *</li>
+<li>0x01读取配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  InputStream inputStream &#x3D; Resources.class.getResourceAsStream(&quot;&#x2F;SqlMapperConfig.xml&quot;); </span><br><span class="line">- 0x02 创建SqlSessionFactory 对象</span><br><span class="line">  - SqlSessionFactoryBuilder builder &#x3D; new SqlSessionFactoryBuilder();</span><br><span class="line">  SqlSessionFactory factory &#x3D; builder.build(inputStream);</span><br><span class="line">- 0x03 使用工厂使用Factory对象 </span><br><span class="line">  - SqlSession session &#x3D; factory.openSession();</span><br><span class="line"> - 0x04 创建SqlSession创建Dao接口的代理对象</span><br><span class="line">   - UserDao userDao &#x3D; session.getMapper(UserDao.class);</span><br><span class="line">- 0x05 释放资源</span><br><span class="line">  - session.close(); </span><br><span class="line">  - inputStream.close();</span><br></pre></td></tr></table></figure>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><code>在接口里的方法配置@key()</code><br><code>修改SqlMapperConfig.xml为class=&quot;com.test.dao.UserDao&quot;</code></li>
 </ul>
-</li>
-<li>0x02 创建SqlSessionFactory 对象<ul>
-<li>*`SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();<pre><code>SqlSessionFactory factory = builder.build(inputStream);`*</code></pre></li>
-</ul>
-</li>
-<li>0x03 使用工厂使用Factory对象 <ul>
-<li><em><code>SqlSession session = factory.openSession();</code></em></li>
-<li>0x04 创建SqlSession创建Dao接口的代理对象<ul>
-<li><em><code>UserDao userDao = session.getMapper(UserDao.class);</code></em></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>0x05 释放资源<ul>
-<li><em><code>session.close();</code></em> </li>
-<li><em><code>inputStream.close();</code></em> </li>
-</ul>
-</li>
-</ul>
-<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p><code>在接口上配@key()置</code><br><code>修改SqlMapperConfig.xml为class=&quot;com.test.dao.UserDao&quot;</code></p>
 
             </div>
             <hr/>
@@ -1095,7 +1075,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">638</span>&nbsp;字
+                class="white-color">647</span>&nbsp;字
             
             
             
